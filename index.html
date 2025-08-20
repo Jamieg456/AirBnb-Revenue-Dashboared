@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Dashboard</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="libs/topojson/topojson-client.v3.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">  <!-- Link to external CSS -->
+</head>
+<body>
+
+    <!-- Header with Reset Button and Title -->
+        <div class="header-container">
+            <h1>Prospective Revenue by Airbnb Listings in Europe</h1>
+            <button id="resetButton">🔄 Reset Dashboard</button>
+        </div>
+
+    <!-- Tooltip for hover interactions -->
+    <div class="tooltip"></div>
+
+    <!-- Container for all charts -->
+    <div class="dashboard">
+        <div class="chart-container">
+          <!--  <h3>Choropleth Map</h3> -->
+            <div class="dropdown-container">
+                <label for="countryDropdown">Choose a Country:</label>
+                <select id="countryDropdown">
+                    <option value="">All Countries</option>
+                </select>
+            </div>
+            <svg id="chart1"></svg>
+        </div>
+        <div class="chart-container">
+          <!--  <h3>Circular Bar Plot</h3> -->
+            <label for="barCountSlider">Number of Bars: <span id="barCountValue">20</span></label>
+            <input type="range" id="barCountSlider" min="1" value="20">
+            <svg id="chart2"></svg>
+        </div>
+        <div class="chart-container">
+            <svg id="chart3"></svg>
+        </div>
+        <div class="chart-container">
+         <!--   <h3>Bar Chart: Highest Revenue</h3> -->
+            <svg id="chart4"></svg>
+        </div>
+        <div class="chart-container">
+         <!--   <h3>Bar Chart: Lowest Revenue</h3> -->
+            <svg id="chart5"></svg>
+        </div>
+        <div class="chart-container">
+          <!--  <h3>Bubble Chart</h3> -->
+            <svg id="chart6"></svg>
+        </div>
+    </div>
+
+    <!-- Load chart scripts -->
+    <script type="module" src="scripts/main.js"></script>
+
+</body>
+</html>
